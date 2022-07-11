@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="wrapper">
+    <div class="logo">
+        <img src="/static/img/ais.png" alt="">
+    </div>
+
+    <div class="text-center mt-4 name">
+        Asahi India Glass Limited
+    </div>
+    <form class="p-3 mt-3" action="/login" method="post">
+        <div class="form-field d-flex align-items-center">
+            <span class="fa fa-user"></span>
+            <input type="text" name="userid" id="userid" placeholder="User login ID" required>
+        </div>
+        <div class="form-field d-flex align-items-center">
+            <span class="fa fa-key"></span>
+            <input type="password" name="password" id="pwd" placeholder="Password" required>
+        </div>
+        <button class="btn mt-3">Authenticate</button>
+        {% if error %}
+        <div class="text-center margin-top:10px"><p id="error"><strong>Error</strong>: {{error}}</p></div>
+        {% endif %}
+    </form>
+
+</div>
+
+{% endblock %}
